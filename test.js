@@ -1,5 +1,5 @@
 const generate = require('./index')
-const {strictEqual, ok} = require('assert')
+const { strictEqual, ok } = require('assert')
 
 const EMPTY_STRING = ''
 const EMPTY_CHARSET = []
