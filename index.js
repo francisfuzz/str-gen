@@ -1,6 +1,6 @@
-function is(type, obj) {
-    var clas = Object.prototype.toString.call(obj).slice(8, -1);
-    return obj !== undefined && obj !== null && clas === type;
+function is (type, obj) {
+  const clas = Object.prototype.toString.call(obj).slice(8, -1)
+  return obj !== undefined && obj !== null && clas === type
 }
 
 /**
@@ -14,34 +14,34 @@ function is(type, obj) {
  * => 'abcabcabca'
  */
 module.exports = function generate (length, charset) {
-    const MAX_STRING_LENGTH = 10000
-    const MAX_ARRAY_LENGTH = 10000
+  const MAX_STRING_LENGTH = 10000
+  const MAX_ARRAY_LENGTH = 10000
 
-    let result = ''
+  let result = ''
 
-    // Return early if any of these conditions are true.
-    if (
-        // Type checks
-        !is('Number', length)
-        || !is('Array', charset)
+  // Return early if any of these conditions are true.
+  if (
+  // Type checks
+    !is('Number', length) ||
+        !is('Array', charset) ||
         // Length checks
-        || length <= 0
-        || length > MAX_STRING_LENGTH
-        || charset.length === 0
-        || charset.length > MAX_ARRAY_LENGTH) {
-        return result
-    }
+        length <= 0 ||
+        length > MAX_STRING_LENGTH ||
+        charset.length === 0 ||
+        charset.length > MAX_ARRAY_LENGTH) {
+    return result
+  }
 
-    while (result.length < length) {
-        const randomIndex = Math.floor(Math.random() * charset.length)
-        // Type check: `characters[randomIndex]` must be a string.
-        if (!is('String', charset[randomIndex])) {
-            continue
-        }
-        result += charset[randomIndex]
+  while (result.length < length) {
+    const randomIndex = Math.floor(Math.random() * charset.length)
+    // Type check: `characters[randomIndex]` must be a string.
+    if (!is('String', charset[randomIndex])) {
+      continue
     }
+    result += charset[randomIndex]
+  }
 
-    // Each element in `characters` could have a length greater than one.
-    // We truncate the result to `length` characters.
-    return result.slice(0, length)
+  // Each element in `characters` could have a length greater than one.
+  // We truncate the result to `length` characters.
+  return result.slice(0, length)
 }
