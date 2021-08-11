@@ -1,7 +1,4 @@
-function is (type, obj) {
-  const clas = Object.prototype.toString.call(obj).slice(8, -1)
-  return obj !== undefined && obj !== null && clas === type
-}
+const is = require('./lib/is')
 
 /**
  * Generates a random string of characters of some length.
