@@ -14,3 +14,7 @@ console.log(generate(10, SIMPLE_CHARSET)) // => 'lsmsmepssp'
 ```
 
 Check out the [`examples/`](https://github.com/francisfuzz/str-gen/tree/main/examples) directory for more interesting cases.
+
+## Contributing
+
+See [CONTRIBUTING.md](./CONTRIBUTING.md).
