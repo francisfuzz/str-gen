@@ -6,8 +6,18 @@
 
 ## Usage
 
+First, assuming that NPM is installed on your machine, create a new directory, navigate to it, and install the package using a command line interface (CLI) of your choice:
+
+```shell
+mkdir example-project
+cd example-project
+npm install @francisfuzz/str-gen
+```
+
+Then, create a file, say `example.js` and run it in your CLI as `node example.js`:
+
 ```js
-const generate = require('str-gen')
+const generate = require('@francisfuzz/str-gen')
 const SIMPLE_CHARSET = ['s', 'i', 'm', 'p', 'l', 'e']
 
 console.log(generate(10, SIMPLE_CHARSET)) // => 'lsmsmepssp'

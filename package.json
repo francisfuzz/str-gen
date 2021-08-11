@@ -1,6 +1,6 @@
 {
-  "name": "str-gen",
-  "version": "1.0.0",
+  "name": "@francisfuzz/str-gen",
+  "version": "1.0.1",
   "description": "Utility for generating a variety of random strings",
   "main": "index.js",
   "scripts": {
